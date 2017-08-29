@@ -34,6 +34,11 @@ enum OnOffSwitch: Togglable { //注意此处是枚举
 protocol RandomNumberGenerator {
     func random() -> Double
 }
+extension RandomNumberGenerator {
+    func randomBool() -> Bool {
+        return random() > 0.5
+    }
+}
 class LinearCongruentialGenerator: RandomNumberGenerator {
     var lastRandom = 42.0
     let m = 139968.0
